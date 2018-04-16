@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<conio.h>
+#include<string.h>
 char s[20],stk[20];
 void main()
 {
 int i,j,k,n,str1,str2;
-char m[5][6][3]={"tb","","","tb","","","","+tb","","","n","n","fc","","","fc","","","","n","*fc","a","n","n","i","","","(e)","",""};
-int size[5][6]={2,0,0,2,0,0,0,3,0,0,1,1,2,0,0,2,0,0,0,1,3,0,1,1,1,0,0,3,0,0}
+char m[5][6][3]={"tb"," "," ","tb"," "," "," ","+tb"," "," ","n","n","fc"," "," ","fc"," "," "," ","n","*fc","a","n","n","i"," "," ","(e)"," "," "};
+int size[5][6]={2,0,0,2,0,0,0,3,0,0,1,1,2,0,0,2,0,0,0,1,3,0,1,1,1,0,0,3,0,0};
 printf("enter the input");
 scanf("%s",s);
 strcat(s,"$");
@@ -14,7 +15,7 @@ stk[0]='$';
 stk[1]='e';
 i=1;
 j=0;
-while(stk[i]!='\0' && s[j]!='\0')
+while(stk[i]!='$' && s[j]!='$')
 {
 if(stk[i]==s[j])
 {
@@ -40,7 +41,7 @@ case 'i' : str2=0;
 break;
 case '+' : str2=1;
 break;
-case '*" : str2=2;
+case '*' : str2=2;
 break;
 case '(' : str2=3;
 break;
@@ -58,7 +59,7 @@ else if(m[str1][str2][0]=='n')
 i--;
 else if(m[str1][str2][0]=='i')
 {
-stk[i]=i;
+stk[i]='i';
 }
 else
 {
@@ -73,6 +74,7 @@ for(k=0;k<=i;k++)
 {
 printf("%c",stk[k]);
 }
+printf(" ");
 for(k=j;k<=n;k++)
 {
 printf("%c",s[k]);
