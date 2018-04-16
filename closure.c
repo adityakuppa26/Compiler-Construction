@@ -3,7 +3,7 @@
 #include<string.h>
 int main()
 {
-int i,j,k,p,n,l,m,flag=0;
+int i,j,k,p,l,m,flag=0;
 char c[3][10],b[10][10];
 printf("enter the productions(max=3)");
 for(i=0;i<3;i++)
